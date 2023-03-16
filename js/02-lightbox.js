@@ -17,4 +17,7 @@ const result = galleryItems.reduce((acc, item) => {
 
 galleryEl.insertAdjacentHTML("afterbegin", result);
 
-let gallery = new SimpleLightbox(".gallery");
+let gallery = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
