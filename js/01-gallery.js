@@ -76,7 +76,6 @@ galleryEl.addEventListener("click", onItemClick);
 function onItemClick(e) {
   e.preventDefault();
   if (e.target.nodeName !== "IMG") return;
-  console.dir(e.target);
   const instance = basicLightbox.create(`
       <img src="${e.target.dataset.source}" width="800" height="600">
   `);
@@ -85,6 +84,7 @@ function onItemClick(e) {
   function escapeCheck(e) {
     if (e.code !== "Escape") return;
     console.log(e);
+
     instance.close();
     document.removeEventListener("keydown", escapeCheck);
   }
